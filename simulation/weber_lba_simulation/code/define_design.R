@@ -29,7 +29,13 @@ sv_constant <- weber_k * mean(design_df$mean_v)
 # FIXED across both datasets and all conditions, expressed on the natural scale.
 # ASSUMED[no values given]: reasonable single LBA parameter values (b = A + B is the
 # natural-scale response threshold; t0 in seconds).
-b_natural  <- 1.5
+# b raised from 1.5 to 2.0 (researcher-directed 2026-09-14) to slow RT at extreme
+# valence (2/8), which was too fast (~0.9s median) even with deliberately high drift
+# there by design; raising the threshold uniformly slows RT across all conditions
+# without lowering drift, which would have undone the accuracy tuning from prior
+# rounds. 2.0 proved too large a jump (RT at 2/8 rose to ~1.17-1.20s, judged too
+# slow) -- lowered to 1.7 (researcher-directed 2026-09-14) for a gentler nudge.
+b_natural  <- 1.7
 A_natural  <- 0.5
 B_natural  <- b_natural - A_natural
 t0_natural <- 0.2

@@ -77,6 +77,16 @@ dataset.
 * 2026-09-14: `rt_split_violin` and `rt_split_halfeye`'s y-axis changed from per-facet
   free scaling to a shared fixed window, tightened per researcher request from 10s to
   7s, for a more consistent and readable axis across the Correct/Incorrect facets.
+* 2026-09-14 (v5): threshold `b` raised from 1.5 to 2.0 (researcher-directed) — RT at
+  extreme valence (2/8) was too fast (~0.9s median) even with deliberately high drift
+  there; raising the threshold uniformly slows RT across all conditions without
+  lowering drift (which would have undone the accuracy tuning above). Median RT at
+  valence 2/8 rose to ~1.17-1.20s; accuracy at those levels barely moved (still
+  ~0.94-0.99). Judged too slow ("way too slow, we needed a gentle change").
+* 2026-09-14 (v6, current): threshold `b` lowered from 2.0 to 1.7 (researcher-directed)
+  for a gentler nudge. Median RT at valence 2/8 is now ~1.0s (up modestly from the
+  original ~0.9s, well below v5's ~1.17-1.20s); accuracy at those levels remains
+  essentially unchanged (~0.94-1.00).
 
 ## Confirmed values
 * Numeric drift-rate means per level (current): 2/8 → 1.8, 4/6 → 0.7, 3/7 → 1.2
@@ -98,26 +108,31 @@ dataset.
   adherence (see Findings/Summary above) — it only ever adjusts overall accuracy.
 * `A`, `B` (with threshold `b = A + B`), `t0`, and `sv` are estimated on the **log
   scale** in EMC2's LBA (see `?EMC2::LBA`); natural-scale target values are set in
-  `define_design.R` (`b = 1.5`, `A = 0.5`, `t0 = 0.2`) and log-transformed before being
+  `define_design.R` (`b = 1.7`, `A = 0.5`, `t0 = 0.2`) and log-transformed before being
   passed to `make_data()`.
 
 ## ASSUMED tags (open for researcher confirmation)
 * `weber_k = 0.3` as the proportionality coefficient for Dataset A's `sv = k * v`.
 * Dataset B's constant `sv` set to `weber_k * mean(mean_v)` (mid-range, so overall noise
   is comparable to Dataset A).
-* Fixed natural-scale values: `b = 1.5`, `A = 0.5`, `t0 = 0.2`.
+* Fixed natural-scale values: `b = 1.7`, `A = 0.5`, `t0 = 0.2`.
+
 * Between-subject SDs for hierarchical variability: 15% of each group-level mean.
 * Standard 2-accumulator (binary choice) LBA setup.
 
 ## Verification
-* Ran end-to-end via `main.R` on 2026-09-14 with the current (v_mismatch=0.5) values.
-  Both datasets generate without error; accuracy by valence level: `weber_holds`
-  2→0.95, 3→0.90, 4→0.73, 6→0.74, 7→0.91, 8→0.93; `weber_violated` 2→0.99, 3→0.89,
-  4→0.63, 6→0.63, 7→0.89, 8→0.99 — realistic and strongly diagnostic of the
-  Weber's-law effect, with a clear ~10-point accuracy gap between datasets at
-  near-neutral valence. Faster RTs at extreme valence than near-neutral, consistent
-  with the extremity-driven drift-rate design. `sv/v` ratio verified directly:
-  constant at 0.3 across all valence levels in `weber_holds`, varying (0.206-0.529)
-  in `weber_violated` — Weber's law adherence is unaffected by the v_mismatch tuning.
-  All 5 figures (10 files) regenerated and visually confirmed readable (fixed 0-7s
+* Ran end-to-end via `main.R` on 2026-09-14 with the current (v6: b=1.7,
+  v_mismatch=0.5) values. Both datasets generate without error. Accuracy by valence
+  level: `weber_holds` 2→0.936, 3→0.905, 4→0.751, 6→0.733, 7→0.899, 8→0.939;
+  `weber_violated` 2→0.995, 3→0.904, 4→0.628, 6→0.643, 7→0.883, 8→0.995 — essentially
+  unchanged from both the b=1.5 and b=2.0 rounds, confirming the threshold retuning
+  did not disturb the accuracy tuning. RT by valence level (median, seconds):
+  `weber_holds` 2→0.998, 3→1.409, 4→2.121, 6→2.148, 7→1.390, 8→1.002; `weber_violated`
+  2→1.005, 3→1.396, 4→1.897, 6→1.920, 7→1.373, 8→1.000 — RT at extreme valence (2/8)
+  is now ~1.0s (a gentle rise from the original ~0.9s, well below v5's ~1.17-1.20s),
+  with the extremity-driven contrast (fast at 2/8, slow at 4/6) fully preserved.
+  `sv/v` ratio verified directly: constant at 0.3 across all valence levels in
+  `weber_holds`, varying (0.206-0.529) in `weber_violated` — Weber's law adherence is
+  unaffected by either the v_mismatch or b tuning. All 5 figures (10 files) plus
+  `summary_report.html` regenerated and visually confirmed readable (fixed 0-7s
   y-axis on the split RT plots; 99.5th percentile zoom on the pooled RT plots).

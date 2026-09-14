@@ -51,12 +51,11 @@ accumulators <- c("left", "right")
 # ASSUMED[no mismatch-drift value given]: incorrect accumulator's v, shared across all
 # valence levels and both datasets. History: -1 (below-baseline) kept accuracy pinned
 # near ceiling (~96-100%) regardless of drift magnitude; raised to 0 (researcher
-# feedback 2026-09-13) still left accuracy too high (~85-100%). Raised again to 0.4
-# (researcher-directed 2026-09-13) to narrow the correct/incorrect gap further -- kept
-# below the near-neutral match drift (0.7 for levels 4/6) so those levels drop
-# meaningfully but stay above chance, rather than jumping straight to ~0.6 which would
-# collapse near-neutral accuracy toward chance (~50%).
-v_mismatch <- 0.4
+# feedback 2026-09-13) still left accuracy too high (~85-100%); raised to 0.4 still
+# too high (~68-100%); raised to 0.5 (2026-09-14) brought accuracy down further
+# (~63-99%); reverted to 0.4 (2026-09-14) at researcher request; then raised back to
+# 0.5 (2026-09-14) -- current value.
+v_mismatch <- 0.5
 
 # Target trials per valence condition per participant, per the spec.
 n_trials_per_condition <- 20

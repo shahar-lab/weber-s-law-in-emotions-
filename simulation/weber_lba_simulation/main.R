@@ -12,6 +12,13 @@ if (!requireNamespace("ggdist", quietly = TRUE)) {
 }
 library(ggdist)
 
+# knitr::kable() renders the static HTML summary report's tables directly (no
+# rmarkdown/pandoc dependency); install once if missing.
+if (!requireNamespace("knitr", quietly = TRUE)) {
+  install.packages("knitr", repos = "https://cloud.r-project.org")
+}
+library(knitr)
+
 # here::here() anchors to the .Rproj root regardless of the working directory,
 # so paths resolve identically on any machine without setwd() gymnastics.
 project_root  <- here::here()
@@ -45,3 +52,7 @@ source(file.path(code_dir, "plot_rt_split.R"))
 
 # 7. Accuracy by valence, holds vs violated
 source(file.path(code_dir, "plot_accuracy.R"))
+
+# 8. Static HTML summary report (accuracy + RT tables, holds vs violated)
+source(file.path(code_dir, "render_summary_report.R"))
+

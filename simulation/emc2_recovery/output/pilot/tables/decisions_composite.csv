@@ -1,0 +1,17 @@
+"scenario","N","hyp","rule","rope","truth_above","detected","correct"
+"perception",20,"H1","all_4_steps",0,TRUE,0,0
+"perception",20,"H2","all_4_steps",0,TRUE,0,0
+"perception",20,"H1","any_step",0,TRUE,1,1
+"perception",20,"H2","any_step",0,TRUE,1,1
+"perception",20,"H1","all_4_steps",0.05,TRUE,0,0
+"perception",20,"H2","all_4_steps",0.05,TRUE,0,0
+"perception",20,"H1","any_step",0.05,TRUE,1,1
+"perception",20,"H2","any_step",0.05,TRUE,1,1
+"perception",20,"H1","all_4_steps",0.1,TRUE,0,0
+"perception",20,"H2","all_4_steps",0.1,TRUE,0,0
+"perception",20,"H1","any_step",0.1,TRUE,1,1
+"perception",20,"H2","any_step",0.1,TRUE,1,1
+"perception",20,"H1","all_4_steps",0.2,TRUE,0,0
+"perception",20,"H2","all_4_steps",0.2,TRUE,0,0
+"perception",20,"H1","any_step",0.2,TRUE,0,0
+"perception",20,"H2","any_step",0.2,TRUE,0,0

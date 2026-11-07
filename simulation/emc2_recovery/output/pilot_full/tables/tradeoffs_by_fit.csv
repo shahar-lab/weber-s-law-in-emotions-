@@ -1,0 +1,69 @@
+"id","scenario","N","level","cell","pair","cor"
+"perception_N020_r01","perception",20,"group","lRemotional:vg2","sv-B",0.875065840328863
+"perception_N020_r01","perception",20,"group","lRemotional:vg2","sv-v",0.376696229377254
+"perception_N020_r01","perception",20,"group","lRemotional:vg2","v-B",0.599414751742589
+"perception_N020_r01","perception",20,"group","lRneutral:vg2","sv-B",0.621936439310694
+"perception_N020_r01","perception",20,"group","lRneutral:vg2","sv-v",0.685723433957678
+"perception_N020_r01","perception",20,"group","lRneutral:vg2","v-B",0.876028645024749
+"perception_N020_r01","perception",20,"group","lRemotional:vg3","sv-B",0.699465638913699
+"perception_N020_r01","perception",20,"group","lRemotional:vg3","sv-v",-0.0541757423181291
+"perception_N020_r01","perception",20,"group","lRemotional:vg3","v-B",0.51428890663028
+"perception_N020_r01","perception",20,"group","lRneutral:vg3","sv-B",0.166597833391408
+"perception_N020_r01","perception",20,"group","lRneutral:vg3","sv-v",0.252909233873863
+"perception_N020_r01","perception",20,"group","lRneutral:vg3","v-B",0.55368295877861
+"perception_N020_r01","perception",20,"group","lRemotional:vg4","sv-B",0.770698381357537
+"perception_N020_r01","perception",20,"group","lRemotional:vg4","sv-v",0.443897659601225
+"perception_N020_r01","perception",20,"group","lRemotional:vg4","v-B",0.71945765467381
+"perception_N020_r01","perception",20,"group","lRneutral:vg4","sv-B",0.745786327233773
+"perception_N020_r01","perception",20,"group","lRneutral:vg4","sv-v",0.79278814609786
+"perception_N020_r01","perception",20,"group","lRneutral:vg4","v-B",0.834323706355467
+"perception_N020_r01","perception",20,"group","lRemotional:vg6","sv-B",0.804762632424766
+"perception_N020_r01","perception",20,"group","lRemotional:vg6","sv-v",0.817435795952549
+"perception_N020_r01","perception",20,"group","lRemotional:vg6","v-B",0.865242520338232
+"perception_N020_r01","perception",20,"group","lRneutral:vg6","v-B",0.628217352639385
+"perception_N020_r01","perception",20,"group","lRemotional:vg7","sv-B",0.462392974547403
+"perception_N020_r01","perception",20,"group","lRemotional:vg7","sv-v",0.299439592200789
+"perception_N020_r01","perception",20,"group","lRemotional:vg7","v-B",0.598149087251566
+"perception_N020_r01","perception",20,"group","lRneutral:vg7","sv-B",0.476222716340311
+"perception_N020_r01","perception",20,"group","lRneutral:vg7","sv-v",-0.177477888565854
+"perception_N020_r01","perception",20,"group","lRneutral:vg7","v-B",0.591785339464386
+"perception_N020_r01","perception",20,"group","lRemotional:vg8","sv-B",0.911063997702747
+"perception_N020_r01","perception",20,"group","lRemotional:vg8","sv-v",0.885395104423922
+"perception_N020_r01","perception",20,"group","lRemotional:vg8","v-B",0.840577282437203
+"perception_N020_r01","perception",20,"group","lRneutral:vg8","sv-B",0.360789122574581
+"perception_N020_r01","perception",20,"group","lRneutral:vg8","sv-v",0.119054422395213
+"perception_N020_r01","perception",20,"group","lRneutral:vg8","v-B",0.923026379852172
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg2","sv-B",0.706228856333159
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg2","sv-v",0.243074395040561
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg2","v-B",0.421299034746197
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg2","sv-B",0.507674195962549
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg2","sv-v",0.608960136610951
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg2","v-B",0.714002728585818
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg3","sv-B",0.521362279798348
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg3","sv-v",-0.058806595773502
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg3","v-B",0.410722392198401
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg3","sv-B",0.137928380372729
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg3","sv-v",0.170417858103906
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg3","v-B",0.468488492643859
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg4","sv-B",0.597118682289133
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg4","sv-v",0.300454749513159
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg4","v-B",0.462459990486478
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg4","sv-B",0.493304827622085
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg4","sv-v",0.484258800737253
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg4","v-B",0.67509794724106
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg6","sv-B",0.593277171018945
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg6","sv-v",0.674384604906699
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg6","v-B",0.724734762688144
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg6","v-B",0.387942683036962
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg7","sv-B",0.229723357931546
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg7","sv-v",0.18533959196703
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg7","v-B",0.365426656019976
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg7","sv-B",0.311084521211708
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg7","sv-v",-0.177540535530285
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg7","v-B",0.39778529838597
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg8","sv-B",0.685380501058925
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg8","sv-v",0.689486326752706
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRemotional:vg8","v-B",0.685954565452331
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg8","sv-B",0.256129717755989
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg8","sv-v",0.0630293195271591
+"perception_N020_r01","perception",20,"subject (mean within-subject)","lRneutral:vg8","v-B",0.839406629038206

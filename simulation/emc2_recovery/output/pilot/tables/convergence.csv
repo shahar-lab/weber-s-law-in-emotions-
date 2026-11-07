@@ -1,0 +1,2 @@
+"id","scenario","N","rep","max_rhat_mu","max_rhat_alpha","min_ess_mu","min_ess_alpha","minutes","pct_excluded"
+"perception_N020_r01","perception",20,1,11.366,9.863,8.9,6.8,17.6955531517665,6.15942028985508

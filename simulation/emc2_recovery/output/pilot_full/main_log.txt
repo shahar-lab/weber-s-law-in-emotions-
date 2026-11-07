@@ -1,0 +1,95 @@
+simulated perception_N020_r01 
+[pilot_full] 1 jobs, 1 to do, 1 worker(s) x 3 chains
+Processing data set 1
+finished perception_N020_r01 
+Warning messages:
+1: In check_progress(emc, stage, iter, stop_criteria, max_tries, step_size,  :
+  Max tries reached. If this happens in burn-in while trying to get
+            gelman diagnostics small enough, you might have a particularly hard model.
+            Make sure your model is well specified. If so, you can run adapt and
+            sample, if run for long enough, sample usually converges eventually.
+2: In check_progress(emc, stage, iter, stop_criteria, max_tries, step_size,  :
+  Max tries reached. If this happens in burn-in while trying to get
+            gelman diagnostics small enough, you might have a particularly hard model.
+            Make sure your model is well specified. If so, you can run adapt and
+            sample, if run for long enough, sample usually converges eventually.
+1 of 1 fits available
+
+== Convergence (max R-hat, min ESS; mu = group means) ==
+    scenario  N max_rhat_mu min_ess_mu max_rhat_alpha min_ess_alpha minutes
+1 perception 20        5.01       10.1           4.06          16.8     103
+  pct_excluded
+1         6.16
+fits with mu R-hat < 1.1 and ESS > 200: 0 of 1 
+
+== Group level: bias, mean |error|, 90% HDI coverage ==
+    scenario  N  family   bias abs_err coverage  rmse
+1 perception 20  log(A)  1.447   1.447    0.000 1.447
+2 perception 20  log(B) -0.372   0.372    0.333 0.418
+3 perception 20 log(sv) -0.121   0.141    0.818 0.178
+4 perception 20 log(t0)  0.233   0.233    0.000 0.233
+5 perception 20       v  0.531   0.531    0.250 0.566
+
+== Participant level: correlation, bias, RMSE ==
+    scenario  N  family   cor   bias  rmse
+1 perception 20  log(A) 0.531  1.481 1.492
+2 perception 20  log(B) 0.651 -0.376 0.419
+3 perception 20 log(sv) 0.202 -0.116 0.203
+4 perception 20 log(t0) 0.820  0.212 0.233
+5 perception 20       v 0.313  0.532 0.588
+
+== Trade-offs: mean posterior correlation within cell ==
+    scenario  N                         level pair  cor
+1 perception 20                         group sv-B 0.63
+2 perception 20 subject (mean within-subject) sv-B 0.46
+3 perception 20                         group sv-v 0.40
+4 perception 20 subject (mean within-subject) sv-v 0.29
+5 perception 20                         group  v-B 0.71
+6 perception 20 subject (mean within-subject)  v-B 0.55
+
+== Hypothesis quantities: bias and coverage (ROPE-independent) ==
+     scenario  N   quantity  true    est coverage
+1  perception 20   H1_mean4 0.294 0.2880        1
+2  perception 20 H1_neg_2m3 0.251 0.0579        1
+3  perception 20 H1_neg_3m4 0.336 0.2071        1
+4  perception 20 H1_pos_7m6 0.336 0.6025        1
+5  perception 20 H1_pos_8m7 0.251 0.2843        1
+6  perception 20   H2_mean4 0.600 0.4236        0
+7  perception 20 H2_neg_2m3 0.600 0.4583        1
+8  perception 20 H2_neg_3m4 0.600 0.2006        1
+9  perception 20 H2_pos_7m6 0.600 0.3274        1
+10 perception 20 H2_pos_8m7 0.600 0.7082        1
+
+== Decision rules per step: detection rate (truth_above = TRUE -> power; FALSE -> false-positive rate) ==
+     scenario  N   quantity rope truth_above detected correct
+1  perception 20   H1_mean4  0.0        TRUE        1       1
+2  perception 20 H1_neg_2m3  0.0        TRUE        0       0
+3  perception 20 H1_neg_3m4  0.0        TRUE        0       0
+4  perception 20 H1_pos_7m6  0.0        TRUE        1       1
+5  perception 20 H1_pos_8m7  0.0        TRUE        1       1
+6  perception 20   H2_mean4  0.0        TRUE        1       1
+7  perception 20 H2_neg_2m3  0.0        TRUE        0       0
+8  perception 20 H2_neg_3m4  0.0        TRUE        0       0
+9  perception 20 H2_pos_7m6  0.0        TRUE        0       0
+10 perception 20 H2_pos_8m7  0.0        TRUE        1       1
+21 perception 20   H1_mean4  0.1        TRUE        1       1
+22 perception 20 H1_neg_2m3  0.1        TRUE        0       0
+23 perception 20 H1_neg_3m4  0.1        TRUE        0       0
+24 perception 20 H1_pos_7m6  0.1        TRUE        1       1
+25 perception 20 H1_pos_8m7  0.1        TRUE        0       0
+26 perception 20   H2_mean4  0.1        TRUE        1       1
+27 perception 20 H2_neg_2m3  0.1        TRUE        0       0
+28 perception 20 H2_neg_3m4  0.1        TRUE        0       0
+29 perception 20 H2_pos_7m6  0.1        TRUE        0       0
+30 perception 20 H2_pos_8m7  0.1        TRUE        1       1
+
+== Composite rules (all 4 steps / any step) ==
+     scenario  N hyp        rule rope truth_above detected correct
+1  perception 20  H1 all_4_steps  0.0        TRUE        0       0
+2  perception 20  H2 all_4_steps  0.0        TRUE        0       0
+3  perception 20  H1    any_step  0.0        TRUE        1       1
+4  perception 20  H2    any_step  0.0        TRUE        1       1
+9  perception 20  H1 all_4_steps  0.1        TRUE        0       0
+10 perception 20  H2 all_4_steps  0.1        TRUE        0       0
+11 perception 20  H1    any_step  0.1        TRUE        1       1
+12 perception 20  H2    any_step  0.1        TRUE        1       1

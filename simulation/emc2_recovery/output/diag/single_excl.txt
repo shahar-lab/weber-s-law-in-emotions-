@@ -1,2 +1,54 @@
 rows 6000 -> 5628 
 Processing data set 1
+Warning messages:
+1: In check_progress(emc, stage, iter, stop_criteria, max_tries, step_size,  :
+  Max tries reached. If this happens in burn-in while trying to get
+            gelman diagnostics small enough, you might have a particularly hard model.
+            Make sure your model is well specified. If so, you can run adapt and
+            sample, if run for long enough, sample usually converges eventually.
+2: In check_progress(emc, stage, iter, stop_criteria, max_tries, step_size,  :
+  Max tries reached. If this happens in burn-in while trying to get
+            gelman diagnostics small enough, you might have a particularly hard model.
+            Make sure your model is well specified. If so, you can run adapt and
+            sample, if run for long enough, sample usually converges eventually.
+minutes 126.8 
+                par  true   est    lo    hi    ok
+  v_lRemotional:vg2  0.80  0.92  0.27  1.57  TRUE
+    v_lRneutral:vg2  2.70  2.34  2.10  2.59 FALSE
+  v_lRemotional:vg3  0.80 -0.82 -1.72  0.18 FALSE
+    v_lRneutral:vg3  2.10  2.81  2.69  2.94 FALSE
+  v_lRemotional:vg4  0.80  1.63  1.22  2.01 FALSE
+    v_lRneutral:vg4  1.50  3.40  2.73  4.19 FALSE
+  v_lRemotional:vg6  1.50  3.17  2.64  3.72 FALSE
+    v_lRneutral:vg6  0.80  1.53  1.45  1.60 FALSE
+  v_lRemotional:vg7  2.10  3.95  3.49  4.45 FALSE
+    v_lRneutral:vg7  0.80  1.70  1.17  2.29 FALSE
+  v_lRemotional:vg8  2.70  3.59  3.35  3.79 FALSE
+    v_lRneutral:vg8  0.80  0.31 -0.67  1.44  TRUE
+ sv_lRemotional:vg2  0.00  0.41  0.18  0.65 FALSE
+   sv_lRneutral:vg2  0.36 -0.11 -0.39  0.18 FALSE
+ sv_lRemotional:vg3  0.00  0.58  0.54  0.62 FALSE
+   sv_lRneutral:vg3  0.11  0.12  0.02  0.22  TRUE
+ sv_lRemotional:vg4  0.00  0.41  0.00  0.74  TRUE
+   sv_lRneutral:vg4 -0.22  0.18 -0.07  0.50 FALSE
+ sv_lRemotional:vg6 -0.22  0.32  0.07  0.59 FALSE
+ sv_lRemotional:vg7  0.11  0.86  0.64  1.10 FALSE
+   sv_lRneutral:vg7  0.00  0.93  0.64  1.26 FALSE
+ sv_lRemotional:vg8  0.36  0.58  0.52  0.63 FALSE
+   sv_lRneutral:vg8  0.00  0.82  0.48  1.14 FALSE
+  B_lRemotional:vg2  0.41  0.05 -0.11  0.23 FALSE
+    B_lRneutral:vg2  0.53 -0.85 -0.97 -0.72 FALSE
+  B_lRemotional:vg3  0.41 -0.35 -0.69  0.02 FALSE
+    B_lRneutral:vg3  0.53  0.02 -0.09  0.11 FALSE
+  B_lRemotional:vg4  0.41  0.48  0.23  0.70  TRUE
+    B_lRneutral:vg4  0.53  0.76  0.52  1.03  TRUE
+  B_lRemotional:vg6  0.41  0.61  0.35  0.87  TRUE
+    B_lRneutral:vg6  0.53  0.19  0.06  0.30 FALSE
+  B_lRemotional:vg7  0.41  0.46  0.31  0.61  TRUE
+    B_lRneutral:vg7  0.53  1.07  0.84  1.31 FALSE
+  B_lRemotional:vg8  0.41 -0.37 -0.48 -0.28 FALSE
+    B_lRneutral:vg8  0.53  0.74  0.62  0.87 FALSE
+                  A -0.92  0.70  0.60  0.81 FALSE
+                 t0 -1.20 -0.85 -0.86 -0.83 FALSE
+covered: 8 of 37 
+max R-hat: 1.021  min ESS: 647.7 

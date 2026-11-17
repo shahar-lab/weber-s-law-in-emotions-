@@ -53,9 +53,21 @@ sv_fixed_cell <- "sv_lRneutral:vg6"
 excl <- list(min_rt = 0.15, mad_k = 3, mad_constant = 1.4826)  # (c) two-sided, per participant
 
 # ---- model / fitting -------------------------------------------------------------
+# Structure of B (threshold distance). Diagnosis (see README): the preregistered "cell" version
+# (B ~ accumulator:valence_group) is not recoverable -- B, v and sv trade off within cells.
+#   "lR"   : B per accumulator only (valence groups are intermixed, so no per-valence threshold)  [default]
+#   "cell" : preregistered B ~ lR:vg.   Override from the shell: B_MODEL=cell Rscript ...
+B_model <- Sys.getenv("B_MODEL", "lR")
+stopifnot(B_model %in% c("lR", "cell"))
+# FIX_A=1: A fixed at its generating value (diagnostic only; NOT preregistered). Use with tier fixA_test.
+fix_A <- Sys.getenv("FIX_A", "0") == "1"
+
 # Participant-level covariance: parameters of the same family (v, sv, B) may correlate;
 # A and t0 are each their own block. ("blocked" in EMC2 = par_groups)
-par_groups <- c(rep(1, 12), rep(2, 11), rep(3, 12), 4, 5)
+par_groups_for <- function(design) {
+  nm <- names(sampled_pars(design))
+  match(ifelse(grepl("^v_", nm), "v", ifelse(grepl("^sv_", nm), "sv", ifelse(grepl("^B_", nm), "B", nm))), c("v", "sv", "B", "A", "t0"))
+}
 
 # Priors (MY DEFAULTS -- preregistration only says weak/informative/skeptical).
 # Same prior mean for every cell => no a-priori ordering, i.e. skeptical about the hypothesised steps.
@@ -89,6 +101,12 @@ tiers <- list(
                max_tries = 3, workers = 1),
   # same dataset as pilot (same seed) but the full stopping rule: tests whether/when a real fit converges
   pilot_full = list(scenarios = "perception", N = 20, reps = 1, stop = NULL, max_tries = max_tries, workers = 1),
+  # B per accumulator only, A free, 138 trials/participant: can the parameters be recovered at all?
+  blr_test = list(scenarios = "perception", N = c(50, 100), reps = 1, stop = NULL, max_tries = max_tries, workers = 2),
+  fixA_test = list(scenarios = "perception", N = 50, reps = 1, stop = NULL, max_tries = max_tries, workers = 1),
+  lin_test = list(scenarios = "perception", N = c(50, 100), reps = 1, stop = NULL, max_tries = max_tries, workers = 2, model = "linear"),
+  con_test = list(scenarios = "perception", N = c(50, 100), reps = 1, stop = NULL, max_tries = max_tries, workers = 2, model = "constrained"),
+  conA_test = list(scenarios = "perception", N = c(50, 100), reps = 1, stop = NULL, max_tries = max_tries, workers = 2, model = "constrained"),   # run with FIX_A=1
   tier1 = list(scenarios = c("perception", "action"), N = 100, reps = 1:20, stop = NULL, max_tries = max_tries, workers = 6),
   tier2 = list(scenarios = c("perception", "action"), N = c(50, 150), reps = 1:20, stop = NULL, max_tries = max_tries, workers = 6),
   tier3 = list(scenarios = "perception_half", N = c(50, 100, 150), reps = 1:20, stop = NULL, max_tries = max_tries, workers = 6)
@@ -111,8 +129,8 @@ seed_for <- function(scenario, N, rep) base_seed + 1e6 * match(scenario, names(s
 make_design <- function(n_subj) {
   design(factors = list(subjects = seq_len(n_subj), vg = vg_levels),
          Rlevels = acc_levels,
-         formula = list(v ~ 0 + lR:vg, sv ~ 0 + lR:vg, B ~ 0 + lR:vg, A ~ 1, t0 ~ 1),
-         constants = setNames(0, sv_fixed_cell),
+         formula = list(v ~ 0 + lR:vg, sv ~ 0 + lR:vg, if (B_model == "lR") B ~ 0 + lR else B ~ 0 + lR:vg, A ~ 1, t0 ~ 1),
+         constants = c(setNames(0, sv_fixed_cell), if (fix_A) c(A = log(gen$A))),
          model = LBA, report_p_vector = FALSE)
 }
 
@@ -133,7 +151,8 @@ true_group_means <- function(scenario, design) {
   }
   p[grep("^B_lRemotional", names(p))] <- log(gen$B_emo)
   p[grep("^B_lRneutral",   names(p))] <- log(gen$B_neu)
-  p["A"] <- log(gen$A); p["t0"] <- log(gen$t0)
+  if ("A" %in% names(p)) p["A"] <- log(gen$A)
+  p["t0"] <- log(gen$t0)
   p
 }
 
@@ -149,7 +168,7 @@ true_group_cov <- function(design) {
 make_prior <- function(design) {
   nm <- names(sampled_pars(design))
   fam <- ifelse(grepl("^v_", nm), "v", ifelse(grepl("^sv_", nm), "sv", ifelse(grepl("^B_", nm), "B", nm)))
-  prior(design, type = "blocked", par_groups = par_groups,
+  prior(design, type = "blocked", par_groups = par_groups_for(design),
         mu_mean = setNames(sapply(fam, function(f) prior_cfg[[f]]["mean"]), nm),
         mu_sd   = setNames(sapply(fam, function(f) prior_cfg[[f]]["sd"]),   nm))
 }
@@ -183,3 +202,7 @@ apply_exclusions <- function(dat) {
   dat$subjects <- droplevels(dat$subjects)
   list(data = dat, counts = c(total = n0, no_response = sum(a), too_fast = sum(b), mad = c_, kept = nrow(dat)))
 }
+
+# linear-in-intensity model (diagnostic alternative, not preregistered); needs prior_cfg defined above
+source("linear_model.R")
+source("constrained_model.R")

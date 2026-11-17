@@ -15,12 +15,13 @@ fit_one <- function(id, tier_name) {
   f_raw <- file.path(tier$out, "fits_raw", paste0(id, ".RData"))
   t_start <- Sys.time()
 
-  des <- make_design(sim$N)
+  spec <- model_spec(tier$model)                  # "cell" (default, preregistered) | "linear" | "constrained"
+  des <- spec$design(sim$N)
   if (file.exists(f_raw)) {
     emc <- f_raw                                   # fit() accepts a path and resumes
   } else {
-    emc <- make_emc(sim$data, des, type = "blocked", par_groups = par_groups,
-                    prior_list = make_prior(des), n_chains = n_chains, compress = compress)
+    emc <- make_emc(spec$prep(sim$data), des, type = "blocked", par_groups = spec$groups(des),
+                    prior_list = spec$prior(des), n_chains = n_chains, compress = compress)
   }
   sc <- if (is.null(tier$stop)) list(sample = c(list(iter = fit_iter), stop_crit)) else tier$stop
   emc <- fit(emc, fileName = f_raw, cores_for_chains = n_chains, verbose = FALSE,

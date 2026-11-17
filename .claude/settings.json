@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -i 's|print\\(round\\(unlist\\(as.data.frame\\(mp1, check.names=FALSE\\)\\)\\\\[1:6\\\\], 3\\)\\)|print\\(round\\(unlist\\(mp1\\)[1:6], 3\\)\\)|' __TRACKED_VAR__/t_models.R)",
+      "Bash('/c/Program Files/R/R-4.4.3/bin/Rscript.exe' __TRACKED_VAR__/t_models.R)",
+      "Bash(\"/c/Program Files/R/R-4.4.3/bin/Rscript.exe\" -e 'options\\(repos = c\\(CRAN = \"https://cloud.r-project.org\"\\)\\); install.packages\\(c\\(\"officer\",\"flextable\"\\), quiet = TRUE\\); cat\\(sapply\\(c\\(\"officer\",\"flextable\"\\), requireNamespace, quietly = TRUE\\), \"\\\\n\"\\)')"
+    ]
+  }
+}

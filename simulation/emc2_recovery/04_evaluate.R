@@ -44,9 +44,11 @@ eval_subject <- function(R) do.call(rbind, lapply(R, function(r) {
 # ---- 4. parameter trade-offs ------------------------------------------------------
 cells <- function(nm) { x <- sub("^(v|sv|B)_", "", nm); x[grepl("^(v|sv|B)_", nm)] }
 tradeoff_pairs <- function(nm) {
-  cl <- unique(cells(nm)); out <- NULL
+  cl <- unique(cells(nm)[grepl(":vg", cells(nm))]); out <- NULL
+  Bname <- function(c_) if (paste0("B_", c_) %in% nm) paste0("B_", c_) else paste0("B_", sub(":vg.*", "", c_))  # B per cell or per accumulator
   for (c_ in cl) for (pr in list(c("sv", "B"), c("sv", "v"), c("v", "B"))) {
-    a <- paste0(pr[1], "_", c_); b <- paste0(pr[2], "_", c_)
+    nmf <- function(p) if (p == "B") Bname(c_) else paste0(p, "_", c_)
+    a <- nmf(pr[1]); b <- nmf(pr[2])
     if (all(c(a, b) %in% nm)) out <- rbind(out, data.frame(cell = c_, pair = paste(pr, collapse = "-"), a = a, b = b))
   }
   out

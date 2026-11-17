@@ -23,4 +23,6 @@ for (i in seq_len(nrow(tier$jobs))) {
 # 2. fit (parallel across datasets, resumable)
 run_fits(tier_name, workers)
 # 3. evaluate
-evaluate_tier(tier_name)
+if (!is.null(tier$model) && tier$model %in% c("linear", "constrained")) {      # alternative model forms
+  source("04b_evaluate_linear.R"); evaluate_lin(tier_name)
+} else evaluate_tier(tier_name)

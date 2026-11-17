@@ -1,0 +1,13 @@
+"scenario","N","level","pair","cor"
+"perception",50,"group","sv-B",0.0571640567408924
+"perception",100,"group","sv-B",0.732707436475531
+"perception",50,"subject (mean within-subject)","sv-B",0.0257578705364615
+"perception",100,"subject (mean within-subject)","sv-B",0.556210390605947
+"perception",50,"group","sv-v",0.0173933518059502
+"perception",100,"group","sv-v",0.703140527653963
+"perception",50,"subject (mean within-subject)","sv-v",0.00819545920070643
+"perception",100,"subject (mean within-subject)","sv-v",0.573649145151694
+"perception",50,"group","v-B",0.532925224793158
+"perception",100,"group","v-B",0.921911618074995
+"perception",50,"subject (mean within-subject)","v-B",0.33332546248385
+"perception",100,"subject (mean within-subject)","v-B",0.770875645865638

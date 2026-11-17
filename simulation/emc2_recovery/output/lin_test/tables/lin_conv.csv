@@ -1,0 +1,3 @@
+"id","N","max_rhat_mu","max_rhat_alpha","min_ess_mu","min_ess_alpha","n_draws","minutes"
+"perception_N050_r01",50,1.681,1.831,31.1,81.8,5433,155.988014515241
+"perception_N100_r01",100,32.044,16.017,49.4,122.8,4665,285.960643215974

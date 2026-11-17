@@ -1,0 +1,115 @@
+
+== convergence ==
+                  id   N max_rhat_mu max_rhat_alpha min_ess_mu min_ess_alpha n_draws minutes
+ perception_N050_r01  50       22.57          16.93       25.9          50.8    5082     150
+ perception_N100_r01 100        5.71           3.62       25.4          28.1    3903     262
+
+== group level: coverage of 90% HDI and mean |bias| by family ==
+                    id family covered abs_bias
+1  perception_N050_r01      A    0.00    1.137
+2  perception_N100_r01      A    0.00    1.404
+3  perception_N050_r01      B    1.00    0.050
+4  perception_N100_r01      B    1.00    0.038
+5  perception_N050_r01     sv    0.50    0.105
+6  perception_N100_r01     sv    0.67    0.095
+7  perception_N050_r01     t0    1.00    0.115
+8  perception_N100_r01     t0    1.00    0.066
+9  perception_N050_r01      v    0.00    0.730
+10 perception_N100_r01      v    0.00    0.944
+
+== group level, every parameter ==
+                  id           par  true    est   lo90   hi90 covered
+ perception_N050_r01     v_cellvt2  2.70  3.578  3.033  3.905   FALSE
+ perception_N050_r01     v_cellvt3  2.10  2.853  2.346  3.206   FALSE
+ perception_N050_r01     v_cellvt4  1.50  2.275  1.816  2.558   FALSE
+ perception_N050_r01     v_cellvt6  1.50  2.107  1.737  2.340   FALSE
+ perception_N050_r01     v_cellvt7  2.10  2.772  2.384  2.975   FALSE
+ perception_N050_r01     v_cellvt8  2.70  3.428  3.028  3.699   FALSE
+ perception_N050_r01   v_cellvnpos  0.80  1.600  1.085  1.905   FALSE
+ perception_N050_r01   v_cellvnneg  0.80  1.424  1.043  1.688   FALSE
+ perception_N050_r01    sv_cellvt2  0.36  0.400  0.362  0.424    TRUE
+ perception_N050_r01    sv_cellvt3  0.11  0.024 -0.114  0.103   FALSE
+ perception_N050_r01    sv_cellvt4 -0.22 -0.425 -0.629 -0.273   FALSE
+ perception_N050_r01    sv_cellvt6 -0.22 -0.416 -0.639 -0.219    TRUE
+ perception_N050_r01    sv_cellvt7  0.11  0.020 -0.103  0.092   FALSE
+ perception_N050_r01    sv_cellvt8  0.36  0.380  0.325  0.436    TRUE
+ perception_N050_r01 B_lRemotional  0.41  0.376 -0.024  0.685    TRUE
+ perception_N050_r01   B_lRneutral  0.53  0.600  0.197  0.891    TRUE
+ perception_N050_r01             A -0.92  0.221  0.031  0.427   FALSE
+ perception_N050_r01            t0 -1.20 -1.319 -1.579 -1.008    TRUE
+ perception_N100_r01     v_cellvt2  2.70  3.822  3.107  4.319   FALSE
+ perception_N100_r01     v_cellvt3  2.10  3.081  2.543  3.489   FALSE
+ perception_N100_r01     v_cellvt4  1.50  2.286  1.929  2.567   FALSE
+ perception_N100_r01     v_cellvt6  1.50  2.257  1.978  2.477   FALSE
+ perception_N100_r01     v_cellvt7  2.10  3.091  2.661  3.417   FALSE
+ perception_N100_r01     v_cellvt8  2.70  3.969  3.397  4.396   FALSE
+ perception_N100_r01   v_cellvnpos  0.80  1.590  1.127  1.923   FALSE
+ perception_N100_r01   v_cellvnneg  0.80  1.657  1.344  1.893   FALSE
+ perception_N100_r01    sv_cellvt2  0.36  0.452  0.283  0.582    TRUE
+ perception_N100_r01    sv_cellvt3  0.11  0.116 -0.026  0.253    TRUE
+ perception_N100_r01    sv_cellvt4 -0.22 -0.403 -0.533 -0.275   FALSE
+ perception_N100_r01    sv_cellvt6 -0.22 -0.350 -0.403 -0.296   FALSE
+ perception_N100_r01    sv_cellvt7  0.11  0.136  0.057  0.213    TRUE
+ perception_N100_r01    sv_cellvt8  0.36  0.514  0.340  0.637    TRUE
+ perception_N100_r01 B_lRemotional  0.41  0.349  0.255  0.461    TRUE
+ perception_N100_r01   B_lRneutral  0.53  0.510  0.355  0.650    TRUE
+ perception_N100_r01             A -0.92  0.488  0.135  0.743   FALSE
+ perception_N100_r01            t0 -1.20 -1.138 -1.225 -1.050    TRUE
+
+== participant level ==
+                  id   N           par     r    bias rmse
+ perception_N050_r01  50     v_cellvt2 0.146  0.8671 0.91
+ perception_N050_r01  50     v_cellvt3 0.389  0.7488 0.79
+ perception_N050_r01  50     v_cellvt4 0.555  0.6898 0.72
+ perception_N050_r01  50     v_cellvt6 0.498  0.5966 0.63
+ perception_N050_r01  50     v_cellvt7 0.421  0.6347 0.69
+ perception_N050_r01  50     v_cellvt8 0.395  0.7079 0.76
+ perception_N050_r01  50   v_cellvnpos 0.386  0.7730 0.79
+ perception_N050_r01  50   v_cellvnneg 0.362  0.6099 0.64
+ perception_N050_r01  50    sv_cellvt2 0.454  0.0520 0.16
+ perception_N050_r01  50    sv_cellvt3 0.211 -0.0844 0.16
+ perception_N050_r01  50    sv_cellvt4 0.399 -0.1498 0.19
+ perception_N050_r01  50    sv_cellvt6 0.502 -0.2010 0.25
+ perception_N050_r01  50    sv_cellvt7 0.496 -0.0904 0.15
+ perception_N050_r01  50    sv_cellvt8 0.493  0.0335 0.17
+ perception_N050_r01  50 B_lRemotional 0.807 -0.0181 0.13
+ perception_N050_r01  50   B_lRneutral 0.789  0.0538 0.14
+ perception_N050_r01  50             A 0.039  1.0963 1.15
+ perception_N050_r01  50            t0 0.710 -0.0918 0.14
+ perception_N100_r01 100     v_cellvt2 0.461  1.1289 1.15
+ perception_N100_r01 100     v_cellvt3 0.450  0.9786 1.01
+ perception_N100_r01 100     v_cellvt4 0.511  0.7884 0.82
+ perception_N100_r01 100     v_cellvt6 0.661  0.7775 0.80
+ perception_N100_r01 100     v_cellvt7 0.576  1.0181 1.03
+ perception_N100_r01 100     v_cellvt8 0.327  1.2692 1.29
+ perception_N100_r01 100   v_cellvnpos 0.421  0.8016 0.82
+ perception_N100_r01 100   v_cellvnneg 0.451  0.8484 0.87
+ perception_N100_r01 100    sv_cellvt2 0.314  0.1017 0.16
+ perception_N100_r01 100    sv_cellvt3 0.421 -0.0031 0.13
+ perception_N100_r01 100    sv_cellvt4 0.469 -0.1907 0.24
+ perception_N100_r01 100    sv_cellvt6 0.342 -0.1397 0.20
+ perception_N100_r01 100    sv_cellvt7 0.468  0.0108 0.13
+ perception_N100_r01 100    sv_cellvt8 0.492  0.1439 0.19
+ perception_N100_r01 100 B_lRemotional 0.795 -0.0633 0.14
+ perception_N100_r01 100   B_lRneutral 0.865 -0.0589 0.13
+ perception_N100_r01 100             A 0.406  1.3952 1.41
+ perception_N100_r01 100            t0 0.694  0.0811 0.14
+
+== hypothesis quantities ==
+                  id   N   quantity true  est lo90 hi90 p_gt0 detected_lo_gt0
+ perception_N050_r01  50 H1_pos_7m6 0.34 0.44 0.29 0.64     1            TRUE
+ perception_N050_r01  50 H1_pos_8m7 0.25 0.36 0.25 0.54     1            TRUE
+ perception_N050_r01  50 H1_neg_3m4 0.34 0.45 0.36 0.51     1            TRUE
+ perception_N050_r01  50 H1_neg_2m3 0.25 0.38 0.28 0.49     1            TRUE
+ perception_N050_r01  50 H2_pos_7m6 0.60 0.66 0.57 0.76     1            TRUE
+ perception_N050_r01  50 H2_pos_8m7 0.60 0.66 0.56 0.74     1            TRUE
+ perception_N050_r01  50 H2_neg_3m4 0.60 0.58 0.45 0.71     1            TRUE
+ perception_N050_r01  50 H2_neg_2m3 0.60 0.72 0.58 0.86     1            TRUE
+ perception_N100_r01 100 H1_pos_7m6 0.34 0.49 0.40 0.59     1            TRUE
+ perception_N100_r01 100 H1_pos_8m7 0.25 0.38 0.28 0.46     1            TRUE
+ perception_N100_r01 100 H1_neg_3m4 0.34 0.52 0.42 0.60     1            TRUE
+ perception_N100_r01 100 H1_neg_2m3 0.25 0.34 0.26 0.41     1            TRUE
+ perception_N100_r01 100 H2_pos_7m6 0.60 0.83 0.68 0.95     1            TRUE
+ perception_N100_r01 100 H2_pos_8m7 0.60 0.88 0.70 1.03     1            TRUE
+ perception_N100_r01 100 H2_neg_3m4 0.60 0.79 0.61 0.93     1            TRUE
+ perception_N100_r01 100 H2_neg_2m3 0.60 0.74 0.57 0.93     1            TRUE

@@ -1,0 +1,111 @@
+
+== convergence ==
+                  id   N max_rhat_mu max_rhat_alpha min_ess_mu min_ess_alpha n_draws minutes
+ perception_N050_r01  50        1.68           1.83       31.1          81.8    5433     156
+ perception_N100_r01 100       32.04          16.02       49.4         122.8    4665     286
+
+== group level: coverage of 90% HDI and mean |bias| by family ==
+                    id family covered abs_bias
+1  perception_N050_r01      A    0.00   1.8524
+2  perception_N100_r01      A    0.00   1.4970
+3  perception_N050_r01      B    1.00   0.0353
+4  perception_N100_r01      B    1.00   0.0096
+5  perception_N050_r01     sv    0.43   0.1094
+6  perception_N100_r01     sv    0.57   0.0884
+7  perception_N050_r01     t0    0.00   0.1370
+8  perception_N100_r01     t0    1.00   0.0548
+9  perception_N050_r01      v    0.12   0.8213
+10 perception_N100_r01      v    0.00   0.5351
+
+== group level, every parameter ==
+                  id                                   par  true    est   lo90    hi90 covered
+ perception_N050_r01            v_lRemotional:directionpos  1.50  2.909  2.728  3.1342   FALSE
+ perception_N050_r01              v_lRneutral:directionpos  0.80  2.312  2.211  2.4839   FALSE
+ perception_N050_r01            v_lRemotional:directionneg  0.80  2.090  1.927  2.2399   FALSE
+ perception_N050_r01              v_lRneutral:directionneg  1.50  2.936  2.800  3.0966   FALSE
+ perception_N050_r01  v_lRemotional:directionpos:intensity  0.60  1.074  0.926  1.2240   FALSE
+ perception_N050_r01    v_lRneutral:directionpos:intensity  0.00 -0.015 -0.103  0.0792    TRUE
+ perception_N050_r01  v_lRemotional:directionneg:intensity  0.00  0.109  0.037  0.1891   FALSE
+ perception_N050_r01    v_lRneutral:directionneg:intensity  0.60  0.925  0.806  1.0498   FALSE
+ perception_N050_r01           sv_lRemotional:directionpos -0.21 -0.251 -0.355 -0.1947    TRUE
+ perception_N050_r01           sv_lRemotional:directionneg  0.00  0.047 -0.128  0.1621    TRUE
+ perception_N050_r01             sv_lRneutral:directionneg -0.21 -0.257 -0.333 -0.1727    TRUE
+ perception_N050_r01 sv_lRemotional:directionpos:intensity  0.29  0.526  0.456  0.5990   FALSE
+ perception_N050_r01   sv_lRneutral:directionpos:intensity  0.00 -0.102 -0.210 -0.0359   FALSE
+ perception_N050_r01 sv_lRemotional:directionneg:intensity  0.00 -0.081 -0.184 -0.0095   FALSE
+ perception_N050_r01   sv_lRneutral:directionneg:intensity  0.29  0.509  0.388  0.5868   FALSE
+ perception_N050_r01                         B_lRemotional  0.41  0.400  0.249  0.5331    TRUE
+ perception_N050_r01                           B_lRneutral  0.53  0.596  0.515  0.6871    TRUE
+ perception_N050_r01                                     A -0.92  0.936  0.785  1.0748   FALSE
+ perception_N050_r01                                    t0 -1.20 -1.067 -1.174 -0.9586   FALSE
+ perception_N100_r01            v_lRemotional:directionpos  1.50  2.419  2.118  2.6063   FALSE
+ perception_N100_r01              v_lRneutral:directionpos  0.80  1.701  1.161  2.0128   FALSE
+ perception_N100_r01            v_lRemotional:directionneg  0.80  1.563  0.800  1.9915   FALSE
+ perception_N100_r01              v_lRneutral:directionneg  1.50  2.397  1.880  2.6907   FALSE
+ perception_N100_r01  v_lRemotional:directionpos:intensity  0.60  0.920  0.725  1.0523   FALSE
+ perception_N100_r01    v_lRneutral:directionpos:intensity  0.00  0.081  0.036  0.1406   FALSE
+ perception_N100_r01  v_lRemotional:directionneg:intensity  0.00  0.169  0.032  0.4036   FALSE
+ perception_N100_r01    v_lRneutral:directionneg:intensity  0.60  0.832  0.605  0.9602   FALSE
+ perception_N100_r01           sv_lRemotional:directionpos -0.21 -0.262 -0.316 -0.1971    TRUE
+ perception_N100_r01           sv_lRemotional:directionneg  0.00  0.051 -0.163  0.4285    TRUE
+ perception_N100_r01             sv_lRneutral:directionneg -0.21 -0.347 -0.414 -0.3027   FALSE
+ perception_N100_r01 sv_lRemotional:directionpos:intensity  0.29  0.421  0.302  0.4906   FALSE
+ perception_N100_r01   sv_lRneutral:directionpos:intensity  0.00 -0.093 -0.127 -0.0686   FALSE
+ perception_N100_r01 sv_lRemotional:directionneg:intensity  0.00 -0.039 -0.218  0.0556    TRUE
+ perception_N100_r01   sv_lRneutral:directionneg:intensity  0.29  0.411  0.279  0.4866    TRUE
+ perception_N100_r01                         B_lRemotional  0.41  0.392  0.272  0.5475    TRUE
+ perception_N100_r01                           B_lRneutral  0.53  0.525  0.445  0.6085    TRUE
+ perception_N100_r01                                     A -0.92  0.581  0.048  0.8890   FALSE
+ perception_N100_r01                                    t0 -1.20 -1.149 -1.332 -1.0365    TRUE
+
+== participant level ==
+                  id   N                                   par     r    bias rmse
+ perception_N050_r01  50            v_lRemotional:directionpos 0.545  1.3936 1.41
+ perception_N050_r01  50              v_lRneutral:directionpos 0.446  1.4298 1.45
+ perception_N050_r01  50            v_lRemotional:directionneg 0.318  1.2612 1.28
+ perception_N050_r01  50              v_lRneutral:directionneg 0.402  1.3667 1.38
+ perception_N050_r01  50  v_lRemotional:directionpos:intensity 0.572  0.4734 0.49
+ perception_N050_r01  50    v_lRneutral:directionpos:intensity 0.349  0.0414 0.14
+ perception_N050_r01  50  v_lRemotional:directionneg:intensity 0.170  0.1248 0.18
+ perception_N050_r01  50    v_lRneutral:directionneg:intensity 0.401  0.3651 0.40
+ perception_N050_r01  50           sv_lRemotional:directionpos 0.417 -0.0522 0.14
+ perception_N050_r01  50           sv_lRemotional:directionneg 0.421  0.0477 0.16
+ perception_N050_r01  50             sv_lRneutral:directionneg 0.160 -0.0087 0.11
+ perception_N050_r01  50 sv_lRemotional:directionpos:intensity 0.420  0.2477 0.27
+ perception_N050_r01  50   sv_lRneutral:directionpos:intensity 0.338 -0.0895 0.12
+ perception_N050_r01  50 sv_lRemotional:directionneg:intensity 0.371 -0.0821 0.12
+ perception_N050_r01  50   sv_lRneutral:directionneg:intensity 0.334  0.1997 0.22
+ perception_N050_r01  50                         B_lRemotional 0.747  0.0074 0.15
+ perception_N050_r01  50                           B_lRneutral 0.756  0.0505 0.14
+ perception_N050_r01  50                                     A 0.041  1.8147 1.84
+ perception_N050_r01  50                                    t0 0.676  0.1610 0.20
+ perception_N100_r01 100            v_lRemotional:directionpos 0.591  0.9409 0.96
+ perception_N100_r01 100              v_lRneutral:directionpos 0.224  0.9058 0.94
+ perception_N100_r01 100            v_lRemotional:directionneg 0.545  0.7658 0.80
+ perception_N100_r01 100              v_lRneutral:directionneg 0.491  0.8921 0.92
+ perception_N100_r01 100  v_lRemotional:directionpos:intensity 0.498  0.3096 0.34
+ perception_N100_r01 100    v_lRneutral:directionpos:intensity 0.256  0.0850 0.17
+ perception_N100_r01 100  v_lRemotional:directionneg:intensity 0.435  0.1560 0.21
+ perception_N100_r01 100    v_lRneutral:directionneg:intensity 0.335  0.2322 0.27
+ perception_N100_r01 100           sv_lRemotional:directionpos 0.223 -0.0676 0.16
+ perception_N100_r01 100           sv_lRemotional:directionneg 0.213  0.0476 0.15
+ perception_N100_r01 100             sv_lRneutral:directionneg 0.384 -0.1520 0.21
+ perception_N100_r01 100 sv_lRemotional:directionpos:intensity 0.370  0.1302 0.16
+ perception_N100_r01 100   sv_lRneutral:directionpos:intensity 0.202 -0.0935 0.12
+ perception_N100_r01 100 sv_lRemotional:directionneg:intensity 0.351 -0.0602 0.11
+ perception_N100_r01 100   sv_lRneutral:directionneg:intensity 0.091  0.1293 0.15
+ perception_N100_r01 100                         B_lRemotional 0.785 -0.0202 0.13
+ perception_N100_r01 100                           B_lRneutral 0.863 -0.0443 0.13
+ perception_N100_r01 100                                     A 0.385  1.4875 1.51
+ perception_N100_r01 100                                    t0 0.691  0.0700 0.13
+
+== hypothesis quantities ==
+                  id   N        quantity true  est lo90 hi90 p_gt0 detected_lo_gt0
+ perception_N050_r01  50 H1_pos_sv_slope 0.29 0.53 0.46 0.60     1            TRUE
+ perception_N050_r01  50 H1_neg_sv_slope 0.29 0.51 0.39 0.59     1            TRUE
+ perception_N050_r01  50  H2_pos_v_slope 0.60 1.07 0.93 1.22     1            TRUE
+ perception_N050_r01  50  H2_neg_v_slope 0.60 0.92 0.81 1.05     1            TRUE
+ perception_N100_r01 100 H1_pos_sv_slope 0.29 0.42 0.30 0.49     1            TRUE
+ perception_N100_r01 100 H1_neg_sv_slope 0.29 0.41 0.28 0.49     1            TRUE
+ perception_N100_r01 100  H2_pos_v_slope 0.60 0.92 0.73 1.05     1            TRUE
+ perception_N100_r01 100  H2_neg_v_slope 0.60 0.83 0.61 0.96     1            TRUE

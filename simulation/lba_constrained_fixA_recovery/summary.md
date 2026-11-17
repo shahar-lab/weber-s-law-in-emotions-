@@ -18,6 +18,37 @@
 * **Exclusions applied to the generated data (preregistered):** no response or RT > 10 s; RT < 0.15 s; per participant |RT - median| > 3 scaled MAD (two-sided)
 * **Recovery criteria:** none set by the researcher; the report lists R-hat, ESS, Pearson r, bias, precision, 90% HDI coverage and trade-offs without a verdict
 
+### Estimated parameters of the fitted model (17 free)
+
+The tracking accumulator is the neutral accumulator for negative images (valence 2, 3, 4) and the emotional accumulator for positive images (valence 6, 7, 8). Only v is on the real line; every other parameter is estimated on the log scale. "True value" is the generating group mean.
+
+| # | Name | What it is | Scale | True value (estimation scale) | After exp() |
+|---|---|---|---|---|---|
+| 1 | `v_cellvt2` | Drift rate of the tracking accumulator on valence-2 images | real line | 2.7 | n/a |
+| 2 | `v_cellvt3` | Same, valence 3 | real line | 2.1 | n/a |
+| 3 | `v_cellvt4` | Same, valence 4 | real line | 1.5 | n/a |
+| 4 | `v_cellvt6` | Drift rate of the tracking accumulator on valence-6 images | real line | 1.5 | n/a |
+| 5 | `v_cellvt7` | Same, valence 7 | real line | 2.1 | n/a |
+| 6 | `v_cellvt8` | Same, valence 8 | real line | 2.7 | n/a |
+| 7 | `v_cellvnpos` | Drift rate of the non-tracking (neutral) accumulator on positive images, one value for valence 6, 7, 8 | real line | 0.8 | n/a |
+| 8 | `v_cellvnneg` | Drift rate of the non-tracking (emotional) accumulator on negative images, one value for valence 2, 3, 4 | real line | 0.8 | n/a |
+| 9 | `sv_cellvt2` | Drift-rate variability (SD) of the tracking accumulator on valence 2 (H1, Weber, is about its change across cells) | log | 0.365 | 1.44 |
+| 10 | `sv_cellvt3` | Same, valence 3 | log | 0.113 | 1.12 |
+| 11 | `sv_cellvt4` | Same, valence 4 | log | -0.223 | 0.80 |
+| 12 | `sv_cellvt6` | Same, valence 6 | log | -0.223 | 0.80 |
+| 13 | `sv_cellvt7` | Same, valence 7 | log | 0.113 | 1.12 |
+| 14 | `sv_cellvt8` | Same, valence 8 | log | 0.365 | 1.44 |
+| 15 | `B_lRemotional` | Threshold distance of the emotional accumulator (threshold = A + B) | log | 0.405 | 1.5 |
+| 16 | `B_lRneutral` | Threshold distance of the neutral accumulator | log | 0.531 | 1.7 |
+| 17 | `t0` | Non-decision time (encoding and motor time) | log | -1.204 | 0.30 s |
+
+### Fixed parameters of the fitted model
+
+| Name | Fixed at (estimation scale) | After exp() | What it is and why |
+|---|---|---|---|
+| `sv_cellvnpos`, `sv_cellvnneg` | 0 | 1 | Drift-rate variability of the non-tracking accumulator in every valence cell. It fixes the scale of the model. |
+| `A` | -0.916 | 0.4 | Range of the start point. Fixed at its true generating value, which is a best case (a real analysis would not know it). |
+
 ## 2. Generating true parameters
 
 * Agent parameters are drawn with EMC2 `make_random_effects()` from the population values above, seeded per N (seed = 20261106 + 1e6 + 1e3 * N + 1) so that all five recovery folders fit identical datasets.
@@ -27,7 +58,7 @@
 ## 3. Generating data
 
 * Generating definition loaded from `models/lba_cellmeans/`; the preregistered exclusions are applied after generation.
-* Artifacts: `simulated_data_N*.rds`, `exclusion_counts_N*.rds`
+* Artifacts: `simulated_data_N*.rds` (+ `.csv` copy), `exclusion_counts_N*.rds`
 * Re-running regenerates exactly the datasets used by the earlier `simulation/emc2_recovery` pipeline (checked identical for N = 50 and N = 100).
 
 ## 4. Recovering parameters

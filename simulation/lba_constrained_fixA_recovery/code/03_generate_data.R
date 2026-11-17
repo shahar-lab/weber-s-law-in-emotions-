@@ -1,6 +1,6 @@
 #### GENERATE DATA ####
 # reads: artifacts/true_parameters_N*.rds, rng_state_N*.rds
-# writes: artifacts/simulated_data_N*.rds, exclusion_counts_N*.rds
+# writes: artifacts/simulated_data_N*.rds (+ .csv copy), exclusion_counts_N*.rds
 # The saved RNG state is restored (not re-seeded) so that make_data() inside the generator continues the
 # stream that drew the agents. This reproduces the legacy datasets and gives all five studies identical data.
 
@@ -27,5 +27,6 @@ for (N in n_subjects_set) {
   print(exclusion_counts)
 
   saveRDS(df,               artifact_path("simulated_data", N))
+  write.csv(df,             artifact_path("simulated_data", N, "csv"), row.names = FALSE)
   saveRDS(exclusion_counts, artifact_path("exclusion_counts", N))
 }

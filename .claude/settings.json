@@ -3,7 +3,8 @@
     "allow": [
       "Bash(sed -i 's|print\\(round\\(unlist\\(as.data.frame\\(mp1, check.names=FALSE\\)\\)\\\\[1:6\\\\], 3\\)\\)|print\\(round\\(unlist\\(mp1\\)[1:6], 3\\)\\)|' __TRACKED_VAR__/t_models.R)",
       "Bash('/c/Program Files/R/R-4.4.3/bin/Rscript.exe' __TRACKED_VAR__/t_models.R)",
-      "Bash(\"/c/Program Files/R/R-4.4.3/bin/Rscript.exe\" -e 'options\\(repos = c\\(CRAN = \"https://cloud.r-project.org\"\\)\\); install.packages\\(c\\(\"officer\",\"flextable\"\\), quiet = TRUE\\); cat\\(sapply\\(c\\(\"officer\",\"flextable\"\\), requireNamespace, quietly = TRUE\\), \"\\\\n\"\\)')"
+      "Bash(\"/c/Program Files/R/R-4.4.3/bin/Rscript.exe\" -e 'options\\(repos = c\\(CRAN = \"https://cloud.r-project.org\"\\)\\); install.packages\\(c\\(\"officer\",\"flextable\"\\), quiet = TRUE\\); cat\\(sapply\\(c\\(\"officer\",\"flextable\"\\), requireNamespace, quietly = TRUE\\), \"\\\\n\"\\)')",
+      "Bash('/c/Program Files/R/R-4.4.3/bin/Rscript.exe' -e 'suppressPackageStartupMessages\\(library\\(posterior\\)\\); x <- readRDS\\(\"chains_mu_N100.rds\"\\); tp <- readRDS\\(\"true_population_N100.rds\"\\)$fitted$mu; m <- sapply\\(x, function\\(c\\) apply\\(c, 1, median\\)\\); colnames\\(m\\) <- paste0\\(\"ch\", 1:3\\); arr <- array\\(NA, c\\(ncol\\(x[[2]]\\), 2, 17\\), dimnames = list\\(NULL, NULL, rownames\\(x[[2]]\\)\\)\\); for \\(k in 1:2\\) arr[, k, ] <- t\\(x[[k + 1]]\\); rh <- apply\\(arr, 3, rhat\\); print\\(round\\(cbind\\(true = tp[rownames\\(m\\)], m, rhat_ch23 = rh\\), 3\\)\\)')"
     ]
   }
 }
